@@ -1,15 +1,26 @@
 import * as firebase from 'firebase/app';
-import { fireauth } from './ApiService';
+import { fireauth as fireAuth } from './ApiService';
 
 export const logIn = (email: string, password: string) => {
-  return fireauth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(() => {
-    return fireauth.signInWithEmailAndPassword(email, password).catch(function(error) {
+  return fireAuth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(() => {
+    return fireAuth.signInWithEmailAndPassword(email, password).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;
 
       console.log(errorCode, errorMessage);
     });
   });
+};
+
+export const logOut = (handler: () => void) => {
+  return fireAuth
+    .signOut()
+    .then(() => {
+      handler();
+    })
+    .catch(function(error) {
+      // An error happened
+    });
 };
 
 // logIn('matej.stavanja@equaleyes.com', 'matej.5').then(res => {
