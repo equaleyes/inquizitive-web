@@ -1,11 +1,8 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
-import Login  from '../pages/login/Login';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Login from '../pages/login/Login';
 import Test from '../pages/Test';
+import Query from '../queries/Query';
 import './Layout.scss';
 
 const Layout = () => {
@@ -24,6 +21,9 @@ const Layout = () => {
               <div className="content">
                 <Route path="/">
                   <Test />
+                </Route>
+                <Route path="/queries">
+                  <Query />
                 </Route>
               </div>
             </div>

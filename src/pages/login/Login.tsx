@@ -3,13 +3,17 @@ import BoxLayout from '../../components/boxLayout/BoxLayout';
 import Input from '../../components/input/Input';
 import SubmitButton from '../../components/submitButton/SubmitButton';
 import './Login.scss';
+import { logIn } from '../../services/auth';
+import { fstore } from '../../services/ApiService';
+import * as firebase from 'firebase/app';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [posta, setPosta] = useState();
 
-  const login = () => {
-    console.log(username, password);
+  const login = async () => {
+    await logIn(username, password);
   };
 
   return (
