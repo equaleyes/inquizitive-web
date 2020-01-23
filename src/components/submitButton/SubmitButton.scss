@@ -12,4 +12,12 @@ button {
   min-width: 190px;
 
   padding: 0 20px;
+
+  .loading {
+    pointer-events: none;
+  }
+
+  img {
+    height: 30px;
+  }
 }

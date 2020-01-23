@@ -7,6 +7,8 @@ import {
 import Login  from '../pages/login/Login';
 import Test from '../pages/Test';
 import './Layout.scss';
+import Sysbar from './Sysbar/Sysbar';
+import SideMenu from './SideMenu/SideMenu';
 
 const Layout = () => {
   return (
@@ -17,12 +19,12 @@ const Layout = () => {
             <Login />
           </Route>
           <div className="layout-wrapper">
-            {/* sysbar */}
+            <Sysbar />
             <div className="content-wrapper">
-              {/* here should come side menu */}
+              <SideMenu />
               {/* some content wrapper */}
               <div className="content">
-                <Route path="/">
+                <Route path="/" exact>
                   <Test />
                 </Route>
               </div>

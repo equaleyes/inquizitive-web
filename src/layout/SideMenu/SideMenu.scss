@@ -1,0 +1,49 @@
+@import '../../theme/variables.scss';
+
+.side-menu {
+  width: $side-menu-width;
+  height: calc(100vh - #{$sysbar-height});
+  background-color: $blue-dark;
+
+  padding-top: 30px;
+
+  a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+
+    height: 50px;
+    display: flex;
+    align-items: center;
+
+    padding: 0 30px;
+    margin: 5px 0;
+
+    position: relative;
+
+    &:hover {
+      color: white;
+    }
+
+    img {
+      height: 23px;
+      margin-right: 20px;
+    }
+
+    &.active {
+      color: white;
+      background-color: $dark;
+
+      &:before {
+        content: "";
+
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        width: 3px;
+        background-color: white;
+        height: 100%;
+      }
+    }
+  }
+}
