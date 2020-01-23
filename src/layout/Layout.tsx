@@ -4,8 +4,9 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import Login  from '../pages/Login';
+import Login  from '../pages/login/Login';
 import Test from '../pages/Test';
+import './Layout.scss';
 
 const Layout = () => {
   return (

@@ -1,0 +1,15 @@
+@import '../../theme/variables.scss';
+
+button {
+  background-color: $blue;
+  color: white;
+  font-size: $font-l;
+  
+  border: solid 1px $grey;
+  border-radius: 5px;
+
+  height: 45px;
+  min-width: 190px;
+
+  padding: 0 20px;
+}

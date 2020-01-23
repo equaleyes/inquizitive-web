@@ -1,0 +1,28 @@
+@import '../../theme/variables.scss';
+
+.form-input {
+  position: relative;
+
+  width: 100%;
+
+  label {
+    position: absolute;
+    color: $grey;
+  }
+
+  input {
+    border: none;
+    border-bottom: solid 1px $grey;
+    background-color: transparent;
+
+    font-size: $font-m;
+
+    width: 100%;
+    padding: 10px 0;
+
+    &:focus {
+      outline: none;
+      border-bottom: solid 1px $blue;
+    }
+  }
+}

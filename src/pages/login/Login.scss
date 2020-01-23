@@ -1,0 +1,47 @@
+@import '../../theme/variables.scss';
+
+.login {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .shadowed-box {
+    width: 310px;
+    text-align: center;
+
+    .title {
+      color: $blue;
+      opacity: 0.9;
+
+      font-weight: bold;
+      font-size: $font-m;
+
+      margin: 10px 0 25px 0;
+    }
+
+    form {
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      width: 190px;
+    }
+
+    button {
+      margin-top: 35px;
+    }
+
+    input {
+      margin-top: 15px;
+    }
+  }
+}
