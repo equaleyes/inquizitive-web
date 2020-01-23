@@ -1,0 +1,60 @@
+@import '../../theme/variables.scss';
+
+.sysbar {
+  height: $sysbar-height;
+  padding: 15px 80px 15px 0;
+  width: 100%;
+  box-sizing: border-box;
+
+  background-color: $blue;
+  color: white;
+
+  display: flex;
+  align-items: center;
+
+  font-size: $font-s;
+  font-weight: 300;
+
+  .logo {
+    width: $side-menu-width;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-right: solid 1px white;
+
+    img {
+      width: 140px;
+    }
+  }
+
+  ul {
+    flex-grow: 1;
+    padding: 0;
+
+    list-style: none;
+
+    li {
+      margin-left: 35px;
+
+      display: flex;
+      align-content: center;
+
+      img {
+        height: 16px;
+      }
+    }
+  }
+
+  .logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: 16px;
+      margin-right: 10px;
+    }
+  }
+}

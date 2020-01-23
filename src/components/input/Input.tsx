@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './input.scss';
 
 export type InputEvent = {
@@ -13,8 +13,6 @@ type InputProps = {
 }
 
 const Input = ({ placeholder, type, onInputChange}: InputProps) => {
-  const [focused, setFocus] = useState(false);
-
   const emitValue = (e: any) => {
     onInputChange(e.target.value);
   };

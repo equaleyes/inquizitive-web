@@ -3,17 +3,23 @@ import './SubmitButton.scss';
 
 type SubmitButtonProps = {
   children: any,
+  loading?: boolean,
   onSubmit: () => any,
 }
 
-const SubmitButton = ({ children, onSubmit }: SubmitButtonProps) => {
+const SubmitButton = ({ children, onSubmit, loading }: SubmitButtonProps) => {
+  const loader = <img src="assets/loader.svg" alt="" />;
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
     onSubmit();
   };
 
-  return <button onClick={handleSubmit}>{children}</button>;
+  return (
+    <button onClick={handleSubmit} className={loading ? 'loading' : ''}>
+      {loading ? loader : children}
+    </button>
+  );
 };
 
 export default SubmitButton;
