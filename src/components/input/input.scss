@@ -25,4 +25,18 @@
       border-bottom: solid 1px $blue;
     }
   }
+  &.inline-input {
+    display: block;
+    max-width: 300px;
+
+    input {
+      border-color: #e7e7e7;
+      font-size: $font-s;
+      padding: 5px 0;
+
+      &::placeholder {
+        color: #b5b5b5;
+      }
+    }
+  }
 }

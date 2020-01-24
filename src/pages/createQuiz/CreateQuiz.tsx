@@ -23,7 +23,7 @@ const CreateQuiz = () => {
 
   const newQuestion: Question = {
     question: '',
-    answer: 0,
+    answer: 1,
     options: [''],
   };
 
@@ -79,8 +79,8 @@ const CreateQuiz = () => {
     };
 
     const input = (
-      <div>
-        <Input placeholder="Vpiši odgovor" onInputChange={setCurrentAnswer} />
+      <div className="inline">
+        <Input placeholder="Vpiši odgovor" onInputChange={setCurrentAnswer} inline={true} />
         <Button onClick={handleSubmit}>
           <span>+</span> Dodaj odgovor
         </Button>
@@ -88,7 +88,7 @@ const CreateQuiz = () => {
     );
 
     const addBtn = (
-      <div className="subtle" onClick={() => addAnswer(questionIndex)}>
+      <div className="subtle action" onClick={() => addAnswer(questionIndex)}>
         <b>+</b> dodaj odgovor
       </div>
     );
@@ -105,12 +105,14 @@ const CreateQuiz = () => {
 
  const renderAnswers = (question: Question, questionIndex: number) => {
    return question.options.map((option, index) => {
-     return (
-       <div key={index} className={`${index === question.answer ? 'selected' : ''}`}>
-         <span onClick={() => selectAnswer(questionIndex, index)}></span>
+     return option ? (
+       <div key={index} className={`answer ${index === question.answer ? 'selected' : ''}`}>
+         <span onClick={() => selectAnswer(questionIndex, index)}>
+           <img src={`assets/${index === question.answer ? 'checked' : 'unchecked'}.svg`} />
+         </span>
          {option}
        </div>
-     );
+     ) : '';
    });
  };
 
@@ -118,11 +120,15 @@ const CreateQuiz = () => {
     return questions.map((question, index) => {
       return (
         <ShadowBox key={index}>
-          {index + 1}. vprašanje
-          <Input onInputChange={e => updateQuestion(index, e)} placeholder="Vpiši vprašanje" />
-          <div>Odgovori</div>
-          {renderAnswers(question, index)}
-          {renderAnswerInput(question, index)}
+          <div className="margin-bottom">{index + 1}. Vprašanje</div>
+          <div className="left-margin">
+            <Input onInputChange={e => updateQuestion(index, e)} placeholder="Vpiši vprašanje" inline={true} />
+          </div>
+          <div className="margin-top margin-bottom">Odgovori</div>
+          <div className="left-margin">
+            {renderAnswers(question, index)}
+            {renderAnswerInput(question, index)}
+          </div>
         </ShadowBox>
       );
     });
@@ -137,26 +143,39 @@ const CreateQuiz = () => {
   };
 
   return (
-    <div className="create-quiz">
+    <div className="create-quiz page">
       <ShadowBox>
-        Ime kviza: <Input onInputChange={setTitle} />
-        <hr />
-        <b>Datum objave: </b>
-        <input
-          type="date"
-          defaultValue={convertToDateValue(startDate)}
-          onChange={e => setStartDate(handleDateChange(e))}
-        />
-        <b>Datum poteka: </b>
-        <input type="date" defaultValue={convertToDateValue(endDate)} onChange={e => setEndDate(handleDateChange(e))} />
-        {renderQuestions()}
-      </ShadowBox>
-      <ShadowBox>
-        <div className="add-btn" onClick={addQuestion}>
-          <span>+</span> Dodaj vprašanje
+        <h2>Ustvari nov kviz</h2>
+        <div className="inline">
+          Ime kviza:{' '}
+          <div className="left-margin">
+            <Input onInputChange={setTitle} inline={true} />
+          </div>
         </div>
+        <hr />
+        <div className="inline">
+          <b className="font-s">Datum objave </b>
+          <input
+            type="date"
+            defaultValue={convertToDateValue(startDate)}
+            onChange={e => setStartDate(handleDateChange(e))}
+          />
+          <b className="font-s">Datum poteka </b>
+          <input
+            type="date"
+            defaultValue={convertToDateValue(endDate)}
+            onChange={e => setEndDate(handleDateChange(e))}
+          />
+        </div>
+        <hr />
+        {renderQuestions()}
+        <ShadowBox>
+          <div className="add-btn" onClick={addQuestion}>
+            <span>+</span> Dodaj vprašanje
+          </div>
+        </ShadowBox>
+        <SubmitButton onSubmit={submit}>Shrani</SubmitButton>
       </ShadowBox>
-      <SubmitButton onSubmit={submit}>Shrani</SubmitButton>
     </div>
   );
 };

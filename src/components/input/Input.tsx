@@ -9,16 +9,17 @@ export type InputEvent = {
 type InputProps = {
   placeholder?: string,
   type?: string,
+  inline?: boolean,
   onInputChange: (value: string) => void,
 }
 
-const Input = ({ placeholder, type, onInputChange}: InputProps) => {
+const Input = ({ placeholder, type, onInputChange, inline }: InputProps) => {
   const emitValue = (e: any) => {
     onInputChange(e.target.value);
   };
 
   return (
-    <div className="form-input">
+    <div className={`form-input ${inline ? 'inline-input' : ''}`}>
       <input type={type || 'text'} onChange={emitValue} autoComplete="new-password" placeholder={placeholder || ''} />
     </div>
   );
