@@ -34,7 +34,7 @@ const ActiveQuizes = () => {
             <td>Mesec pozarne varnosti</td>
             <td>od 1.2. 2020 do 7.2. 2020</td>
             <td>
-              <ProgressBar value={76.3} />
+              <ProgressBar value={76} />
             </td>
           </tr>
         </tbody>

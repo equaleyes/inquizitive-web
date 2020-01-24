@@ -17,7 +17,9 @@ const Quizes = () => {
               <span>+</span>Dodaj nov
             </Button>
           </Link>
-          <Button>Zaključi kviz</Button>
+          <div className="disable">
+            <Button>Zaključi kviz</Button>
+          </div>
         </ShadowBox>
       </div>
 

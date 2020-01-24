@@ -4,4 +4,46 @@
   .shadow-box {
     margin-bottom: $space-m;
   }
+
+  .number {
+    display: inline-block;
+
+    &.red {
+      color: $red;;
+    }
+
+    &.green {
+      color: $green;
+    }
+  }
+
+  i {
+    font-style: normal;
+    font-weight: 300;
+  }
+
+  .small-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: $space-l;
+  }
+
+  .search {
+    position: relative;
+
+    img {
+      position: absolute;
+      height: 16px;
+      top: 7px;
+      left: 5px;
+    }
+
+    input {
+      height: 25px;
+      padding-left: 26px;
+      border: solid 1px $blue;
+      border-radius: 3px;
+      outline: none;
+    }
+  }
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ProgressBar.scss';
+import Number from '../number/Number';
 
 export enum ProgressBarColor {
   Dark = 'dark',
@@ -27,7 +28,7 @@ const ProgressBar = ({value, color}: ProgressBarProps) => {
   return (
     <div className={`progress-bar ${color || ProgressBarColor.Dark}`}>
       <div className="progress" style={{ width: `${animated ? value : 0}%` }}>
-        <span>{value}%</span>
+        <span><Number value={value} symbol="%"/></span>
       </div>
     </div>
   );

@@ -76,3 +76,9 @@ table {
     height: 16px;
   }
 }
+
+.disable {
+  opacity: 0.6;
+  pointer-events: none;
+  display: inline-block;
+}
