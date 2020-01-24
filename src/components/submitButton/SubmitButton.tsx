@@ -16,7 +16,7 @@ const SubmitButton = ({ children, onSubmit, loading }: SubmitButtonProps) => {
   };
 
   return (
-    <button onClick={handleSubmit} className={loading ? 'loading' : ''}>
+    <button onClick={handleSubmit} className={`submit-btn ${loading ? 'loading' : ''}`}>
       {loading ? loader : children}
     </button>
   );

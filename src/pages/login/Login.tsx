@@ -24,7 +24,7 @@ const Login = () => {
 
   return (
     <div className="login">
-      <BoxLayout>
+      <BoxLayout border={true}>
         <img src="assets/logo.png" alt="" />
         <div className="title">PRIJAVA</div>
         <form>

@@ -22,3 +22,17 @@ body {
 
   font-size: $font-s;
 }
+
+.page {
+  padding: $space-l $space-m;
+}
+
+h2 {
+  color: $blue;
+  font-size: $font-l;
+  font-weight: bold;
+
+  &.light {
+    color: #798d9e;
+  }
+}

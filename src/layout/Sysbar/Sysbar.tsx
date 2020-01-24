@@ -13,7 +13,7 @@ const Sysbar = () => {
         </li>
       </ul>
       <div className="logout">
-        <img src="assets/help.svg" alt="" />
+        <img src="assets/logout.svg" alt="" />
         Odjava
       </div>
     </div>

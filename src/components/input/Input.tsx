@@ -7,8 +7,8 @@ export type InputEvent = {
 }
 
 type InputProps = {
-  placeholder: string,
-  type: string,
+  placeholder?: string,
+  type?: string,
   onInputChange: (value: string) => void,
 }
 
@@ -19,7 +19,7 @@ const Input = ({ placeholder, type, onInputChange}: InputProps) => {
 
   return (
     <div className="form-input">
-      <input type={type} onChange={emitValue} autoComplete="new-password" placeholder={placeholder} />
+      <input type={type || 'text'} onChange={emitValue} autoComplete="new-password" placeholder={placeholder || ''} />
     </div>
   );
 };

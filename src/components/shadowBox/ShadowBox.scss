@@ -1,0 +1,8 @@
+@import '../../theme/variables.scss';
+
+.shadow-box {
+  box-shadow: $shadow-m;
+  border-radius: 10px;
+
+  padding: $space-m;
+}
