@@ -5,6 +5,7 @@ import {
   Route,
 } from 'react-router-dom';
 import Login  from '../pages/login/Login';
+import Query from '../queries/Query';
 import './Layout.scss';
 import Sysbar from './Sysbar/Sysbar';
 import SideMenu from './SideMenu/SideMenu';
@@ -30,6 +31,9 @@ const Layout = () => {
                 </Route>
                 <Route path="/create-quiz" exact>
                   <CreateQuiz />
+                </Route>
+                <Route path="/query">
+                  <Query />
                 </Route>
               </div>
             </div>
