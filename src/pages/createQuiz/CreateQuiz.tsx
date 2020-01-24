@@ -7,6 +7,7 @@ import SubmitButton from '../../components/submitButton/SubmitButton';
 
 import { createQuiz } from '../../queries/queries';
 import { create } from 'domain';
+import { subscribeToQuiz } from '../../queries/listeners';
 
 export interface Question {
   question: string;
@@ -104,22 +105,20 @@ const CreateQuiz = () => {
     setQuestions(currentQuestions);
   };
 
- const renderAnswers = (question: Question, questionIndex: number) => {
-   return question.options.map((option, index) => {
-     const isSelected = index === question.answer;
-
-     return option ? (
-       <div key={index} className={`answer ${isSelected ? 'selected' : ''}`}>
-         <span onClick={() => selectAnswer(questionIndex, index)}>
-           <img src={`assets/${isSelected ? 'checked' : 'unchecked'}.svg`} />
-         </span>
-         {option}
-       </div>
-     ) : (
-       ''
-     );
-   });
- };
+  const renderAnswers = (question: Question, questionIndex: number) => {
+    return question.options.map((option, index) => {
+      return option ? (
+        <div key={index} className={`answer ${index === question.answer ? 'selected' : ''}`}>
+          <span onClick={() => selectAnswer(questionIndex, index)}>
+            <img src={`assets/${index === question.answer ? 'checked' : 'unchecked'}.svg`} />
+          </span>
+          {option}
+        </div>
+      ) : (
+        ''
+      );
+    });
+  };
 
   const renderQuestions = () => {
     return questions.map((question, index) => {

@@ -12,11 +12,13 @@ import SideMenu from './SideMenu/SideMenu';
 import Quizes from '../pages/quizes/Quixes';
 import CreateQuiz from '../pages/createQuiz/CreateQuiz';
 import Employees from '../pages/employees/Employees';
+import Notification from '../components/notification/Notification';
 
 const Layout = () => {
   return (
     <Router>
       <div className="app-content">
+        <Notification />
         <Switch>
           <Route path="/login">
             <Login />

@@ -3,8 +3,6 @@ import { cursorTo } from 'readline';
 import { Question } from '../pages/createQuiz/CreateQuiz';
 import { start } from 'repl';
 
-import Timestamp from 'firebase/firestore';
-
 const getQuiz = async (id: string = 'pozarna_varnost_1') => {
   let postaQuizz = await fstore
     .collection('quizzes')
