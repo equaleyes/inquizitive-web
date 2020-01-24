@@ -12,6 +12,8 @@
   min-width: 190px;
 
   padding: 0 20px;
+  cursor: pointer;
+  outline: none;
 
   .loading {
     pointer-events: none;
@@ -19,5 +21,9 @@
 
   img {
     height: 30px;
+  }
+
+  &:hover {
+    opacity: 0.8;
   }
 }

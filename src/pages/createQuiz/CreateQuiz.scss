@@ -1,1 +1,93 @@
 @import '../../theme/variables.scss';
+
+.create-quiz {
+  .inline {
+    display: flex;
+    align-items: flex-end;
+
+    .form-input {
+      flex-grow: 1;
+
+      width: auto;
+      padding-right: $space-m;
+    }
+
+    input[type="date"] {
+      border: none;
+      border-bottom: solid 1px #e7e7e7;
+      text-align: center;
+      margin: 0 $space-s 0 $space-xs;
+    }
+  }
+
+  .font-s {
+    font-size: $font-s;
+  }
+
+  hr {
+    margin: $space-m 0;
+    display: block;
+  }
+
+  .left-margin {
+    margin-left: $space-m;
+  }
+
+  .margin-top {
+    margin-top: $space-m;
+  }
+
+  .margin-bottom {
+    margin-bottom: $space-s;
+  }
+
+  .answer {
+    margin: $space-s 0;
+    display: flex;
+
+    span {
+      width: 16px;
+
+      display: block;
+      margin-right: $space-m;
+
+      img {
+        height: 16px;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  .shadow-box {
+    .shadow-box {
+      width: 500px;
+      margin-bottom: $space-m;
+    }
+  }
+
+  .add-btn {
+    text-align: center;
+    font-weight: 300;
+    color: $grey;
+    cursor: pointer;
+
+    &:hover {
+      color: $blue;
+    }
+
+    span {
+      font-size: $font-l;
+      font-weight: bold;
+      margin-right: 5px;
+    }
+  }
+
+  .submit-button {
+    display: block;
+    margin-left: auto;
+  }
+}
