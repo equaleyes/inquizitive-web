@@ -5,6 +5,8 @@ import ShadowBox from '../../components/shadowBox/ShadowBox';
 import Button from '../../components/button/Button';
 import SubmitButton from '../../components/submitButton/SubmitButton';
 
+import { createQuiz } from '../../queries/queries';
+import { create } from 'domain';
 
 export interface Question {
   question: string;
@@ -30,10 +32,9 @@ const CreateQuiz = () => {
   const [questions, setQuestions] = useState<Question[]>([newQuestion]);
 
   const convertToDateValue = (date: Date): string => {
-    const month: number = date.getMonth() + 1; 
-    return `${ date.getFullYear() }-${ month < 10 ? `0${ month }` : month }-${ date.getDate() }`;
+    const month: number = date.getMonth() + 1;
+    return `${date.getFullYear()}-${month < 10 ? `0${month}` : month}-${date.getDate()}`;
   };
-
 
   const handleDateChange = (event: any) => {
     event.persist();
@@ -58,7 +59,7 @@ const CreateQuiz = () => {
 
     setQuestions(currentQuestions);
   };
-  
+
   /**
    * Update selected answer on input change
    * @param questionIndex index of answer
@@ -92,7 +93,7 @@ const CreateQuiz = () => {
         <b>+</b> dodaj odgovor
       </div>
     );
-    
+
     return question.options.length === 0 || question.options[question.options.length - 1] === '' ? input : addBtn;
   };
 
@@ -103,16 +104,16 @@ const CreateQuiz = () => {
     setQuestions(currentQuestions);
   };
 
- const renderAnswers = (question: Question, questionIndex: number) => {
-   return question.options.map((option, index) => {
-     return (
-       <div key={index} className={`${index === question.answer ? 'selected' : ''}`}>
-         <span onClick={() => selectAnswer(questionIndex, index)}></span>
-         {option}
-       </div>
-     );
-   });
- };
+  const renderAnswers = (question: Question, questionIndex: number) => {
+    return question.options.map((option, index) => {
+      return (
+        <div key={index} className={`${index === question.answer ? 'selected' : ''}`}>
+          <span onClick={() => selectAnswer(questionIndex, index)}></span>
+          {option}
+        </div>
+      );
+    });
+  };
 
   const renderQuestions = () => {
     return questions.map((question, index) => {
@@ -134,6 +135,8 @@ const CreateQuiz = () => {
     console.log('end date', endDate);
     console.log('questions', questions);
     console.log('___________________');
+
+    createQuiz(title, startDate, endDate, questions);
   };
 
   return (
