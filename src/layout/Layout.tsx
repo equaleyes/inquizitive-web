@@ -5,10 +5,11 @@ import {
   Route,
 } from 'react-router-dom';
 import Login  from '../pages/login/Login';
-import Test from '../pages/Test';
 import './Layout.scss';
 import Sysbar from './Sysbar/Sysbar';
 import SideMenu from './SideMenu/SideMenu';
+import Quizes from '../pages/quizes/Quixes';
+import CreateQuiz from '../pages/createQuiz/CreateQuiz';
 
 const Layout = () => {
   return (
@@ -25,7 +26,10 @@ const Layout = () => {
               {/* some content wrapper */}
               <div className="content">
                 <Route path="/" exact>
-                  <Test />
+                  <Quizes />
+                </Route>
+                <Route path="/create-quiz" exact>
+                  <CreateQuiz />
                 </Route>
               </div>
             </div>

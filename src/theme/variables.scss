@@ -1,5 +1,6 @@
 $blue: #1f405f;
 $blue-dark: #102233;
+$blue-light: #788c9e;
 $grey: #979797;
 $dark: #0d1b29;
 
@@ -8,6 +9,18 @@ $font-m: 16px;
 $font-l: 20px;
 
 $shadow-l: 10px 10px 22px 0px rgba(38, 0, 0, 0.15);
+$shadow-m: 0px 0px 5px 0px rgba(0, 0, 0, 0.23);
+
+$smooth: .1s all ease-in-out;
+$animate: .5s all ease-in-out;
 
 $side-menu-width: 280px;
-$sysbar-height: 80px;
+$sysbar-height: 70px;
+
+$space-xxs: 5px;
+$space-xs: 10px;
+$space-s: 15px;
+$space-m: 20px;
+$space-l: 30px;
+$space-xl: 40px;
+$space-xxl: 50px;

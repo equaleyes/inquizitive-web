@@ -1,0 +1,47 @@
+@import '../../theme/variables.scss';
+
+.progress-bar {
+  position: relative;
+  border-radius: 3px;
+
+  overflow: hidden;
+
+  height: 20px;
+  width: 100%;
+
+  .progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: $animate;
+    width: 0;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    span {
+      color: white;
+      opacity: 0.8;
+      font-size: $font-s;
+    }
+  }
+
+  &.dark {
+    background-color: $blue;
+
+    .progress {
+      background-color: #31669a;
+    }
+  }
+
+  &.light {
+    background-color: #798d9e;
+
+    .progress {
+      background-color: #84a4c3;
+    }
+  }
+}

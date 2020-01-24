@@ -1,9 +1,12 @@
 @import '../../theme/variables.scss';
 
 .shadowed-box {
-  border: solid 3px $blue;
   border-radius: 30px;
 
   box-shadow: $shadow-l;
   padding: 30px 40px;
+
+  &.border {
+    border: solid 3px $blue;
+  }
 }
