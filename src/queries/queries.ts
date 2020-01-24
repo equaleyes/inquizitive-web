@@ -58,4 +58,17 @@ const create = async (title: string, startDate: Date, endDate: Date, question: A
     .set(massageData(title, startDate, endDate, question));
 };
 
+export const getLeaderBoard = async () => {
+  await fstore.collection('companies').doc('posta');
+};
+
+export const getAllQuizzess = async () => {
+  let nekaj = await fstore.collection('quizzes').get();
+  let quizzes = [] as any;
+  nekaj.forEach(doc => {
+    quizzes.push(doc.data());
+  });
+  return quizzes;
+};
+
 export const createQuiz = create;
