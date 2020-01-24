@@ -13,7 +13,7 @@ const SideMenu = () => {
         <img src="assets/gift.svg" alt="" />
         Nagrade
       </NavLink>
-      <NavLink to="/b" activeClassName="active">
+      <NavLink to="/employees" activeClassName="active">
         <img src="assets/employee.svg" alt="" />
         Zaposleni
       </NavLink>

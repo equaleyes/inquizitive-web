@@ -11,6 +11,7 @@ import Sysbar from './Sysbar/Sysbar';
 import SideMenu from './SideMenu/SideMenu';
 import Quizes from '../pages/quizes/Quixes';
 import CreateQuiz from '../pages/createQuiz/CreateQuiz';
+import Employees from '../pages/employees/Employees';
 
 const Layout = () => {
   return (
@@ -34,6 +35,9 @@ const Layout = () => {
                 </Route>
                 <Route path="/query">
                   <Query />
+                </Route>
+                <Route path="/employees">
+                  <Employees />
                 </Route>
               </div>
             </div>

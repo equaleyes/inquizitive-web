@@ -12,38 +12,4 @@
   .progress-bar {
     width: 300px;
   }
-
-  table {
-    width: 100%;
-    border-spacing: 0;
-    
-    color: #515151;
-    font-size: $font-s;
-
-    td, th {
-      padding: $space-xs $space-s;
-      border-right: solid 1px #515151;
-      border-bottom: solid 1px #cbcbcb;
-
-      text-align: left;
-      font-weight: normal;
-    }
-
-    &.light {
-      color: #9e9e9e;
-
-      td, th {
-        border-right: solid 1px #515151;
-      }
-    }
-
-    td:last-child,
-    th:last-child {
-      border-right: none;
-    }
-
-    img {
-      height: 16px;
-    }
-  }
 }
