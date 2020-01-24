@@ -2,10 +2,10 @@ import React from 'react';
 import './SubmitButton.scss';
 
 type SubmitButtonProps = {
-  children: any,
-  loading?: boolean,
-  onSubmit: () => any,
-}
+  children: any;
+  loading?: boolean;
+  onSubmit: () => any;
+};
 
 const SubmitButton = ({ children, onSubmit, loading }: SubmitButtonProps) => {
   const loader = <img src="assets/loader.svg" alt="" />;

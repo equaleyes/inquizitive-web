@@ -1,28 +1,39 @@
 import React, { useState } from 'react';
 import { fstore } from '../services/ApiService';
-import SubmitButton from '../../components/submitButton';
+import SubmitButton from '../components/submitButton/SubmitButton';
 
 const Query = () => {
   const [posta, setPosta] = useState();
+  const [question, setQuestion] = useState();
   const query = async () => {
     let postaQuizz = await fstore
       .collection('quizzes')
       .doc('pozarna_varnost_1')
       .get();
 
-    setPosta(postaQuizz.data());
+    await fstore
+      .collection('quizzes')
+      .doc('question-name')
+      .onSnapshot({ includeMetadataChanges: true }, doc => {
+        setQuestion(doc.data());
+      });
 
-    if (posta && posta.startDate && posta.startDate.seconds) {
-      console.log(posta.startDate);
-    }
-    console.log(posta);
+    setPosta(postaQuizz.data());
+  };
+
+  const createQuiz = async (question: string = 'question-name') => {
+    const questionName = encodeURIComponent(question);
+    await fstore
+      .collection('quizzes')
+      .doc(questionName)
+      .set({ name: question });
   };
 
   return (
     <div>
-      <SubmitButton onSubmit={login} loading={loader}>
-        Prijava
-      </SubmitButton>
+      {posta && posta.startDate ? posta.startDate.seconds : ''}
+      {question && question.name ? question.name : ''}
+      <SubmitButton onSubmit={query}>Prijava</SubmitButton>
     </div>
   );
 };
